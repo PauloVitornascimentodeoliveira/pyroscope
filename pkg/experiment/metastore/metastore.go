@@ -169,7 +169,6 @@ func (m *Metastore) starting(ctx context.Context) error {
 	if err := m.initRaft(); err != nil {
 		return fmt.Errorf("failed to initialize raft: %w", err)
 	}
-	go m.state.index.StartCleanupLoop(ctx)
 	return nil
 }
 
